@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Eden Channel — Investor Brief</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: 1920px 1080px; margin: 0; }
+body {
+  width: 1920px; height: 1080px;
+  background: #F5F0E3;
+  color: #2D2A26;
+  font-family: 'Inter', 'Pretendard', -apple-system, sans-serif;
+  font-feature-settings: "ss01" on;
+  padding: 60px 80px;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  gap: 32px;
+}
+
+/* HEADER */
+.header { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 2px solid #2D2A26; padding-bottom: 24px; }
+.brand { font-size: 14px; letter-spacing: 4px; color: #8B5A3C; text-transform: uppercase; margin-bottom: 12px; font-weight: 600; }
+h1 { font-size: 56px; font-weight: 800; letter-spacing: -2px; line-height: 1.05; }
+.date { font-size: 14px; color: #6B7C5A; font-weight: 500; }
+
+.thesis {
+  font-size: 26px; font-weight: 500; line-height: 1.4;
+  color: #2D2A26;
+  border-left: 4px solid #8B5A3C; padding-left: 24px;
+  font-style: italic;
+}
+.thesis strong { color: #8B5A3C; font-weight: 700; font-style: normal; }
+
+/* BODY GRID */
+.body { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.section {
+  background: rgba(255,255,255,0.5);
+  border-radius: 8px;
+  padding: 32px;
+  border: 1px solid rgba(45,42,38,0.08);
+}
+.section h2 {
+  font-size: 18px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+  margin-bottom: 24px; color: #8B5A3C;
+  display: flex; align-items: center; gap: 12px;
+}
+.section h2::after { content:""; flex:1; height: 1px; background: #8B5A3C; opacity: 0.3; }
+
+/* CHART */
+.chart { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+.bar {
+  display: grid;
+  grid-template-columns: 180px 1fr 70px;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+}
+.bar .label { font-weight: 600; color: #2D2A26; }
+.bar .track { background: rgba(45,42,38,0.08); height: 22px; border-radius: 3px; overflow: hidden; }
+.bar .fill {
+  height: 100%; background: linear-gradient(90deg, #6B7C5A 0%, #8B5A3C 100%);
+  border-radius: 3px;
+}
+.bar .value { font-weight: 700; color: #8B5A3C; text-align: right; font-size: 14px; }
+.market-total {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px dashed #8B5A3C;
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-size: 16px;
+}
+.market-total .big { font-size: 38px; font-weight: 800; color: #8B5A3C; letter-spacing: -1px; }
+
+/* USP */
+.usp-list { display: flex; flex-direction: column; gap: 18px; }
+.usp-item {
+  display: flex; gap: 16px; align-items: flex-start;
+}
+.usp-item .icon {
+  width: 44px; height: 44px;
+  background: #8B5A3C; color: #F5F0E3;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; flex-shrink: 0;
+}
+.usp-item .body-text { flex: 1; }
+.usp-item .ttl { font-weight: 700; font-size: 18px; margin-bottom: 4px; }
+.usp-item .desc { font-size: 14px; color: rgba(45,42,38,0.75); line-height: 1.5; }
+
+/* CONTENT */
+.content-list { display: flex; flex-direction: column; gap: 14px; }
+.content-item {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 14px;
+  align-items: baseline;
+}
+.content-item .num {
+  font-size: 22px; font-weight: 800; color: #6B7C5A;
+  font-style: italic;
+}
+.content-item .text { font-size: 15px; line-height: 1.5; }
+.content-item .text strong { color: #2D2A26; font-weight: 700; }
+
+/* KPI */
+.kpi-grid {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+}
+.kpi-card {
+  background: rgba(255,255,255,0.6);
+  border: 1px solid rgba(45,42,38,0.08);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+.kpi-card .milestone { font-size: 12px; letter-spacing: 2px; color: #6B7C5A; font-weight: 700; text-transform: uppercase; }
+.kpi-card .target { font-size: 32px; font-weight: 800; color: #8B5A3C; margin: 8px 0 4px; letter-spacing: -1px; }
+.kpi-card .sub { font-size: 12px; color: rgba(45,42,38,0.65); }
+
+.footer { display: flex; justify-content: space-between; align-items: center; padding-top: 16px; font-size: 12px; color: rgba(45,42,38,0.5); }
+.footer .tag { letter-spacing: 3px; text-transform: uppercase; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <div class="brand">Eden · YouTube Channel · Investor Brief</div>
+    <h1>Quiet English Self-Improvement<br><span style="color: #8B5A3C;">from Seoul</span></h1>
+  </div>
+  <div class="date">2026-05-25 · v1</div>
+</div>
+
+<div class="thesis">
+  글로벌 영어권 차분 자기개발 시장은 이미 <strong>26.9M+ 구독자</strong>가 검증한 안정 카테고리.
+  <strong>한국 거주 + 영어 + 차분 톤</strong>의 조합은 그 시장에 단 하나도 없는 차별점이다.
+  운동·건강 결합으로 카테고리 내 첫 진입을 노린다.
+</div>
+
+<div class="body">
+
+  <div class="section">
+    <h2>Market Validation</h2>
+    <div class="chart">
+      <div class="bar"><div class="label">Yoga with Adriene</div><div class="track"><div class="fill" style="width:100%"></div></div><div class="value">12.0M</div></div>
+      <div class="bar"><div class="label">Pick Up Limes</div><div class="track"><div class="fill" style="width:36.6%"></div></div><div class="value">4.4M</div></div>
+      <div class="bar"><div class="label">Matt D'Avella</div><div class="track"><div class="fill" style="width:30.8%"></div></div><div class="value">3.7M</div></div>
+      <div class="bar"><div class="label">Heather Robertson</div><div class="track"><div class="fill" style="width:29.1%"></div></div><div class="value">3.5M</div></div>
+      <div class="bar"><div class="label">Better Ideas</div><div class="track"><div class="fill" style="width:12.5%"></div></div><div class="value">1.5M</div></div>
+      <div class="bar"><div class="label">Lavendaire</div><div class="track"><div class="fill" style="width:5.8%"></div></div><div class="value">0.7M</div></div>
+      <div class="bar"><div class="label">Nathaniel Drew</div><div class="track"><div class="fill" style="width:5.0%"></div></div><div class="value">0.6M</div></div>
+      <div class="bar"><div class="label">Lana Blakely</div><div class="track"><div class="fill" style="width:4.1%"></div></div><div class="value">0.5M</div></div>
+    </div>
+    <div class="market-total">
+      <div>Total Validated Audience</div>
+      <div><span class="big">26.9M</span> <span style="color: rgba(45,42,38,0.6);">subs</span></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Channel USP</h2>
+    <div class="usp-list">
+      <div class="usp-item">
+        <div class="icon">🇰🇷</div>
+        <div class="body-text">
+          <div class="ttl">Living in Seoul, Speaking in English</div>
+          <div class="desc">서양 자기개발 채널에 존재하지 않는 동양 도시 풍경 · 한국식 미학 · 영어 native-equivalent 톤의 조합</div>
+        </div>
+      </div>
+      <div class="usp-item">
+        <div class="icon">🎬</div>
+        <div class="body-text">
+          <div class="ttl">Cinematic Calm</div>
+          <div class="desc">Matt D'Avella·Nathaniel Drew 라인의 차분 톤. 일기 같은 1인칭 화법. 사운드 디자인 우선의 시청 경험.</div>
+        </div>
+      </div>
+      <div class="usp-item">
+        <div class="icon">🧘</div>
+        <div class="body-text">
+          <div class="ttl">Fitness × Self-Development</div>
+          <div class="desc">운동을 명상처럼, 자기개발을 신체 훈련처럼. 카테고리 교차로 알고리즘 양면 노출 · 시청 retention 강화.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Content Strategy</h2>
+    <div class="content-list">
+      <div class="content-item">
+        <div class="num">01</div>
+        <div class="text"><strong>Living Quietly in Seoul</strong> — 서울 골목·한강·카페에서의 1주 차분 vlog. 시그니처 시리즈.</div>
+      </div>
+      <div class="content-item">
+        <div class="num">02</div>
+        <div class="text"><strong>30 Days of Journaling</strong> — 챌린지 시리즈. Matt D'Avella 검증 포맷의 한국형 변주.</div>
+      </div>
+      <div class="content-item">
+        <div class="num">03</div>
+        <div class="text"><strong>Korean Morning Routine</strong> — K-건강 문화 (찜질방·맨발 걷기·5AM 루틴) 영어 소개.</div>
+      </div>
+      <div class="content-item">
+        <div class="num">04</div>
+        <div class="text"><strong>Reading in a Seoul Cafe</strong> — 차분한 독서·생각 vlog. ASMR적 시청 경험.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>12-Month KPI</h2>
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="milestone">Month 3</div>
+        <div class="target">1K</div>
+        <div class="sub">subs · 50K views</div>
+      </div>
+      <div class="kpi-card">
+        <div class="milestone">Month 6</div>
+        <div class="target">10K</div>
+        <div class="sub">subs · 500K views</div>
+      </div>
+      <div class="kpi-card">
+        <div class="milestone">Month 12</div>
+        <div class="target">50K</div>
+        <div class="sub">subs · 3M views</div>
+      </div>
+    </div>
+    <div style="margin-top: 22px; font-size: 13px; color: rgba(45,42,38,0.7); line-height: 1.6;">
+      <strong style="color:#2D2A26;">Revenue paths:</strong> AdSense (M6+) · Patreon membership · Brand sponsorship (K-건강·웰빙 브랜드) · Course/Workshop (M12+).
+      <br><strong style="color:#2D2A26;">차별 leverage:</strong> 한국 거주 + 영어 = 글로벌 시청자 + 국내 브랜드 양방향 수익 모델.
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <div class="tag">Confidential · Eden Channel</div>
+  <div>Reference benchmarks based on public YouTube subscriber data, 2026-05.</div>
+</div>
+
+</body>
+</html>
